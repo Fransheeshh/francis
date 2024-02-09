@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO MY WORLD</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('path/to/your/image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative; /* Set body position to relative */
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Header styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        /* Navigation styles */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            padding: 10px 20px;
+        }
+        /* Main content styles */
+        main {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: background-color 0.3s;
+        }
+        main h2 {
+            color: #555;
+        }
+        /* Footer styles */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        /* Descriptions styles */
+        .description {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animated-section {
+            animation: slideIn 0.5s ease-in-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        /* Floating translation styles */
+        #translation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            z-index: 9999; /* Set a high z-index to ensure it's on top of other elements */
+            display: none; /* Initially hidden */
+            transition: transform 0.5s ease-in-out; /* Add transition for floating effect */
+        }
+        #translation:hover {
+            transform: translate(-50%, -55%); /* Adjust translateY for floating effect */
+        }
+        /* Adjusted image sizes */
+        .description img {
+            width: 150px; /* Set the width */
+            height: 150px; /* Set the height */
+            object-fit: cover; /* Maintain aspect ratio and cover container */
+            margin: 5px; /* Add some margin for spacing */
+            cursor: pointer; /* Add cursor pointer */
+        }
+        .description img:hover {
+            transform: scale(1.1); /* Add scale effect on hover */
+        }
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FRANCHEESE</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showDescription('home'); changeColors('khaki')">Home</a>
+        <a href="#" onclick="showDescription('about'); changeColors('skyblue')">About</a>
+        <a href="#" onclick="showDescription('services'); changeColors('brown')">Activities</a>
+        <a href="#" onclick="showDescription('contact'); changeColors('pink')">Contact</a>
+        <a href="#" onclick="showDescription('your-student'); changeColors('black')">Your Student</a>
+    </nav>
+    <main id="mainContent">
+        <h2 onclick="toggleTranslation()">ネリザが好きです</h2>
+        <p>In a world where you can be anyone, be yourself.</p>
+    </main>
+    
+    <!-- Descriptions -->
+    <div id="homeDescription" class="description">
+        <h2>Be my guest</h2>
+        <p>Be my guest</p>
+        <p>Be my guest</p>
+    </div>
+    <div id="aboutDescription" class="description">
+        <h2>This is for Fundamentals in Electronics</h2>
+        <p>Everything you see here is all about in my F.E sub.</p>
+    </div>
+    <div id="servicesDescription" class="description">
+        <h2>SYMBOLS OF BASIC ELECTRICAL ELEMENTS</h2>
+        <p></p>
+        <img src="C:\Users\Francis\Downloads\cj\cj\1.png" alt="Activities Image" onclick="openModal(this)">
+        <img src="C:\Users\Francis\Downloads\cj\cj\2.png" alt="Activities Image" onclick="openModal(this)">
+        <img src="path/to/activities-image.jpg" alt="Activities Image" onclick="openModal(this)">
+        <img src="path/to/activities-image.jpg" alt="Activities Image" onclick="openModal(this)">
+        <img src="path/to/activities-image.jpg" alt="Activities Image" onclick="openModal(this)">
+        <img src="path/to/activities-image.jpg" alt="Activities Image" onclick="openModal(this)">
+    </div>
+    <div id="contactDescription" class="description">
+        <h2>09456798311</h2>
+        <p>P'wede mo 'kong tawagan</p>
+        <p>Anytime you want</p>
+        <img src="C:\Users\Francis\Downloads\cj\cj\qr(fb).png2.png" alt="Contact Image" onclick="openModal(this)">
+    </div>
+    <div id="your-studentDescription" class="description">
+        <h2>Francis masarap</h2>
+        <p>Description about your student...</p>
+        <img src="path/to/your-student-image.jpg" alt="Your Student Image" onclick="openModal(this)">
+    </div>
+    
+    <footer>
+        <p>&copy; All rights reserved.</p>
+    </footer>
+
+    <div id="translation">
+        <p>I like Nelyza</p>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Modal Image">
+        </div>
+    </div>
+
+    <script>
+        function showDescription(section) {
+            // Hide all descriptions
+            var descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(function(description) {
+                description.style.display = 'none';
+            });
+
+            // Show the selected description
+            var description = document.getElementById(section + 'Description');
+            if (description) {
+                description.classList.add('animated-section');
+                description.style.display = 'block';
+            }
+        }
+
+        function changeColors(color) {
+            var body = document.body;
+            var mainContent = document.getElementById('mainContent');
+            body.style.backgroundColor = color;
+            mainContent.style.backgroundColor = color;
+        }
+
+        function toggleTranslation() {
+            var translation = document.getElementById('translation');
+            if (translation.style.display === 'none') {
+                translation.style.display = 'block';
+            } else {
+                translation.style.display = 'none';
+            }
+        }
+
+        function openModal(img) {
+            var modal = document.getElementById('imageModal');
+            var modalImage = document.getElementById('modalImage');
+            modalImage.src = img.src;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
